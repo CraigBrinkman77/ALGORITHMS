@@ -107,7 +107,7 @@ class BST {
             } else {
                 return this.find(val, current.left); // <-- move current to current.left
             }
-        } else if (current.val < val) { // go right
+        } else{ // go right
             if(current.right == null){
                 return false;
             }
