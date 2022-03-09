@@ -154,6 +154,30 @@ class BST {
         //return the depth
         return Math.min( this.minDepth2(current.left), this.minDepth2(current.right) ) + 1
     };
+    minDepth(current, depth) {
+        if(current == undefined){
+            current = this.root;
+            depth = 1
+        }
+        if(current.left == null && current.right == null){
+            return depth
+        }
+        if(current.left == null && current.right){
+            return this.minDepth(current.right, depth+1)
+
+        }else if(current.right == null && current.left){
+            return this.minDepth(current.left, depth+1)
+        }else{
+            let right = this.minDepth(current.right, depth+1)
+            let left = this.minDepth(current.left, depth+1)
+            if(left<=right){
+                return left
+            }else{
+                return right
+            }
+        }
+
+    };
 
     // Ninja Bonus: Level Order Traversal Solution
     // function minDepthLevelOrder(root) {
