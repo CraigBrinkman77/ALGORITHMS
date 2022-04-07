@@ -7,8 +7,7 @@ var numIslands = function(grid) {
             if(grid[row][column] == 1){
                 output += 1
                 islandTest(grid, row, column)
-            } 
-
+            }
         }
     }
     return output
