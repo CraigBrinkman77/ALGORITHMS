@@ -8,7 +8,7 @@ class Solution(object):
         ret.append(path)
         for i in range(len(nums)):
             self.dfs(nums[i+1:], path+[nums[i]], ret)
-       
+
     # Bit Manipulation    
     def subsets2(self, nums):
         res = []
